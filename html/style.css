@@ -1,0 +1,258 @@
+:root {
+    --primary-color: #C8A96A;
+    --primary-rgb: 200, 169, 106;
+    --primary-glow: rgba(200, 169, 106, 0.4);
+    --bg-card: rgba(10, 11, 14, 0.75);
+    --bg-glass: rgba(20, 22, 28, 0.4);
+    --text-white: #ffffff;
+    --text-dim: rgba(255, 255, 255, 0.7);
+    --border-card: rgba(var(--primary-rgb), 0.5);
+    --card-radius: 12px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+    background: transparent;
+}
+
+#ui-wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+    pointer-events: none;
+    background: transparent;
+}
+
+#clothing-menu {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    pointer-events: none;
+}
+
+/* Base Card Style */
+.menu-card {
+    position: absolute;
+    background: var(--bg-card);
+    /* Removed backdrop-filter to prevent black box artifact */
+    border: 1px solid var(--border-card);
+    border-radius: 15px;
+    box-shadow: none;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+}
+
+/* Visibility State */
+.menu-active .menu-card {
+    opacity: 1;
+    animation: card-spawn 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    animation-delay: calc(var(--card-index) * 0.08s);
+}
+
+/* Positions */
+.header-card {
+    left: 80px;
+    top: 100px;
+    padding: 18px 24px;
+    gap: 20px;
+}
+
+.category-card[data-row="1"] {
+    left: 100px;
+    top: 240px;
+}
+
+.category-card[data-row="2"] {
+    left: 60px;
+    top: 360px;
+}
+
+.category-card[data-row="3"] {
+    left: 110px;
+    top: 480px;
+}
+
+.category-card[data-row="4"] {
+    left: 70px;
+    top: 600px;
+}
+
+.category-card[data-row="5"] {
+    left: 120px;
+    top: 720px;
+}
+
+.category-card {
+    padding: 12px 18px;
+    gap: 15px;
+}
+
+.header-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(var(--primary-rgb), 0.1);
+    border: 1px solid var(--primary-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.header-icon i {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+.header-text span {
+    color: var(--text-white);
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    line-height: 1;
+}
+
+.header-text p {
+    margin: 4px 0 0 0;
+    color: var(--text-dim);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.item-button {
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(var(--primary-rgb), 0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dim);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.item-button:hover {
+    background: rgba(var(--primary-rgb), 0.15);
+    border-color: var(--primary-color);
+    color: var(--text-white);
+    transform: scale(1.1);
+}
+
+.item-button.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #111;
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.row-label {
+    min-width: 80px;
+    color: var(--text-white);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: right;
+    padding-right: 15px;
+    position: relative;
+}
+
+.row-label::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 12px;
+    background: var(--primary-color);
+    box-shadow: 0 0 8px var(--primary-glow);
+}
+
+.reset-button {
+    width: 42px;
+    height: 42px;
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin-left: 5px;
+    box-shadow: inset 0 0 10px rgba(var(--primary-rgb), 0.1);
+}
+
+.reset-button:hover {
+    background: var(--primary-color);
+    color: #000;
+    transform: rotate(180deg);
+}
+
+#branch-svg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+}
+
+#branch-path {
+    fill: none;
+    stroke: var(--primary-color);
+    stroke-width: 0.15;
+    stroke-linecap: round;
+    stroke-dasharray: 0.8 0.4;
+    animation: branch-dash 3s infinite linear;
+    opacity: 0.8;
+}
+
+#branch-dots {
+    fill: var(--primary-color);
+    stroke: none;
+    opacity: 0.8;
+}
+
+@keyframes branch-dash {
+    to {
+        stroke-dashoffset: -3;
+    }
+}
+
+@keyframes card-spawn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

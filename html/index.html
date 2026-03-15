@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GGWPx Clothing - Premium Character Customization</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="ui-wrapper">
+        <svg id="branch-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <!-- Branching lines will be drawn here -->
+            <path id="branch-path" d="" />
+            <path id="branch-dots" d="" />
+        </svg>
+
+        <div id="clothing-menu">
+
+            <!-- Card 1: T-Head -->
+            <div class="menu-card category-card" data-row="1" style="--card-index: 1;">
+                <div class="button-group">
+                    <div class="item-button" data-type="hat" title="Hat">
+                        <i class="fas fa-hat-cowboy"></i>
+                    </div>
+                    <div class="item-button" data-type="glasses" title="Glasses">
+                        <i class="fas fa-glasses"></i>
+                    </div>
+                    <div class="item-button" data-type="mask" title="Mask">
+                        <i class="fas fa-mask"></i>
+                    </div>
+                </div>
+                <div class="row-label">T-Head</div>
+            </div>
+
+            <!-- Card 2: L-Head -->
+            <div class="menu-card category-card" data-row="2" style="--card-index: 2;">
+                <div class="button-group">
+                    <div class="item-button" data-type="hair" title="Hair">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="item-button" data-type="beard" title="Facial Hair">
+                        <i class="fas fa-user-ninja"></i>
+                    </div>
+                    <div class="item-button" data-type="ear" title="Ear Accessory">
+                        <i class="fas fa-ear-listen"></i>
+                    </div>
+                </div>
+                <div class="row-label">L-Head</div>
+            </div>
+
+            <!-- Card 3: Body -->
+            <div class="menu-card category-card" data-row="3" style="--card-index: 3;">
+                <div class="button-group">
+                    <div class="item-button" data-type="vest" title="Vest">
+                        <i class="fas fa-vest"></i>
+                    </div>
+                    <div class="item-button" data-type="jacket" title="Jacket/Top">
+                        <i class="fas fa-shirt"></i>
+                    </div>
+                    <div class="item-button" data-type="undershirt" title="Undershirt">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                </div>
+                <div class="row-label">Body</div>
+                <div class="reset-button" title="Reset Clothing">
+                    <i class="fas fa-rotate-right"></i>
+                </div>
+            </div>
+
+            <!-- Card 4: Hands -->
+            <div class="menu-card category-card" data-row="4" style="--card-index: 4;">
+                <div class="button-group">
+                    <div class="item-button" data-type="watch" title="Watch">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="item-button" data-type="gloves" title="Gloves">
+                        <i class="fas fa-mitten"></i>
+                    </div>
+                    <div class="item-button" data-type="bag" title="Bag">
+                        <i class="fas fa-bag-shopping"></i>
+                    </div>
+                </div>
+                <div class="row-label">Hands</div>
+            </div>
+
+            <!-- Card 5: Legs -->
+            <div class="menu-card category-card" data-row="5" style="--card-index: 5;">
+                <div class="button-group">
+                    <div class="item-button" data-type="bracelet" title="Bracelet">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <div class="item-button" data-type="shoes" title="Shoes">
+                        <i class="fas fa-shoe-prints"></i>
+                    </div>
+                    <div class="item-button" data-type="pants" title="Pants">
+                        <i class="fas fa-socks"></i>
+                    </div>
+                </div>
+                <div class="row-label">Legs</div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
