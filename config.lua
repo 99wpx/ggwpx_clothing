@@ -1,7 +1,7 @@
 Config = {}
 
 Config.Command = "clothing" -- Command name to open the menu
-Config.DefaultKeybind = "K" -- Default keybind
+Config.DefaultKeybind = "Y" -- Default keybind
 Config.KeybindDescription = "Open Clothing Toggle Menu"
 Config.DefaultThemeColor = '#C8A96A' -- Gold (Default) #C8A96A
 
